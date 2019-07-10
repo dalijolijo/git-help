@@ -200,6 +200,17 @@ If you've rebased your branch onto upstream/master you may need to force the pus
 git push -f origin master
 ```
 
+# SSHFS mount of shared host directory 
+Login on private host (stored SSH key) to use git push via SSH. 
+```sh
+sudo apt-get install sshfs
+sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@<IP_SHARED_HOST>:/opt/<Project> /mnt/
+cd /mnt/
+git remote set-url origin git@github.com:<Username>/<Project>.git
+git push
+```
+Hit: Add SSH pub key to git repo
+
 # Git with meld (Windows)
 See http://meldmerge.org/ and https://gitforwindows.org
 
