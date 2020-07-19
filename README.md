@@ -200,6 +200,16 @@ If you've rebased your branch onto upstream/master you may need to force the pus
 git push -f origin master
 ```
 
+All commands for fast copy:
+```sh
+git remote add upstream https://github.com/whoever/whatever.git
+git fetch upstream master
+git checkout master
+git rebase upstream/master
+git push -f origin master
+
+```
+
 # SSHFS mount of shared host directory 
 Login on private host (stored SSH key) to use git push via SSH. 
 ```sh
